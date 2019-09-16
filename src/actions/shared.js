@@ -6,13 +6,15 @@ import { setAuthedUser } from '../actions/authedUser';
 
 const AUTHED_ID = 'tylermcginns';
 
-export function handleIntialData() {
+// that is a thunk creator (thunk is for asynchronous features)
+
+export function handleInitialData() {
 	return (dispatch) => {
 		return getInitialData().then(({ users, tweets }) => {
 			dispatch(receiveUsers(users));
 			dispatch(receiveTweets(tweets));
 			dispatch(setAuthedUser(AUTHED_ID));
-			console.log('dispatch', dispatch);
+			// console.log('dispatch in handleInitialData', dispatch);
 		});
 	};
 }
