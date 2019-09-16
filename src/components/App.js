@@ -1,15 +1,9 @@
-import React, { Component } from 'react'
-import Redux from 'react-redux'
+import React, { Component } from 'react';
 
 class App extends Component {
-  const store = Redux.
-  render() {
-    return (
-      <div>
-        Starter Code
-      </div>
-    )
-  }
+	render() {
+		return <div>Starter Code</div>;
+	}
 }
 
-export default App
+export default App;
