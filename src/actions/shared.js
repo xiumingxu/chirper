@@ -14,7 +14,6 @@ export function handleInitialData() {
 			dispatch(receiveUsers(users));
 			dispatch(receiveTweets(tweets));
 			dispatch(setAuthedUser(AUTHED_ID));
-			// console.log('dispatch in handleInitialData', dispatch);
 		});
 	};
 }

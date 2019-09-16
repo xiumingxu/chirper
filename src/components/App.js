@@ -4,6 +4,8 @@ import { handleInitialData } from '../actions/shared';
 
 import { connect } from 'react-redux';
 
+import Dashboard from './Dashboard';
+
 class App extends Component {
 	componentDidMount() {
 		// use thunk creator
@@ -11,9 +13,12 @@ class App extends Component {
 	}
 
 	render() {
-		return <div>Starter Code</div>;
+		return <div>{this.props.loading === true ? null : <Dashboard />}</div>;
 	}
 }
 
+function mapStateToProps({ authedUsers }) {
+	return { loading: authedUsers === null };
+}
 // if there is no state, then connect has no parameters
-export default connect()(App);
+export default connect(mapStateToProps)(App);
